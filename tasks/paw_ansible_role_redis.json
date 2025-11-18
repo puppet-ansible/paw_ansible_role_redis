@@ -1,0 +1,168 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Execute the entire Ansible role imperatively",
+  "input_method": "environment",
+  "parameters": {
+    "ansible_managed": {
+      "description": "",
+      "type": "Optional[String]"
+    },
+    "redis_daemon": {
+      "description": "",
+      "type": "Optional[String]"
+    },
+    "redis_port": {
+      "description": "Ansible role variable (default: 6379)",
+      "type": "Optional[Integer]"
+    },
+    "redis_bind_interface": {
+      "description": "Ansible role variable (default: 127.0.0.1)",
+      "type": "Optional[String]"
+    },
+    "redis_unixsocket": {
+      "description": "Ansible role variable (default: )",
+      "type": "Optional[String]"
+    },
+    "redis_timeout": {
+      "description": "Ansible role variable (default: 300)",
+      "type": "Optional[Integer]"
+    },
+    "redis_loglevel": {
+      "description": "Ansible role variable (default: notice)",
+      "type": "Optional[String]"
+    },
+    "redis_logfile": {
+      "description": "Ansible role variable (default: /var/log/redis/redis-server.log)",
+      "type": "Optional[String]"
+    },
+    "redis_databases": {
+      "description": "Ansible role variable (default: 16)",
+      "type": "Optional[Integer]"
+    },
+    "save": {
+      "description": "",
+      "type": "Optional[String]"
+    },
+    "redis_rdbcompression": {
+      "description": "Ansible role variable (default: yes)",
+      "type": "Optional[String]"
+    },
+    "redis_dbfilename": {
+      "description": "Ansible role variable (default: dump.rdb)",
+      "type": "Optional[String]"
+    },
+    "redis_dbdir": {
+      "description": "Ansible role variable (default: /var/lib/redis)",
+      "type": "Optional[String]"
+    },
+    "redis_maxmemory": {
+      "description": "Ansible role variable (default: 0)",
+      "type": "Optional[Integer]"
+    },
+    "redis_maxmemory_policy": {
+      "description": "Ansible role variable (default: noeviction)",
+      "type": "Optional[String]"
+    },
+    "redis_maxmemory_samples": {
+      "description": "Ansible role variable (default: 5)",
+      "type": "Optional[Integer]"
+    },
+    "redis_appendonly": {
+      "description": "Ansible role variable (default: no)",
+      "type": "Optional[String]"
+    },
+    "redis_appendfsync": {
+      "description": "Ansible role variable (default: everysec)",
+      "type": "Optional[String]"
+    },
+    "include": {
+      "description": "",
+      "type": "Optional[String]"
+    },
+    "redis_requirepass": {
+      "description": "Require authentication to Redis with a password.",
+      "type": "Optional[String]"
+    },
+    "redis_disabled_command": {
+      "description": "",
+      "type": "Optional[String]"
+    },
+    "redis_extra_config": {
+      "description": "Ansible role variable (default: )",
+      "type": "Optional[String]"
+    },
+    "redis_enablerepo": {
+      "description": "Used for RHEL/CentOS/Fedora only. Allows the use of different repos.",
+      "type": "Optional[String]"
+    },
+    "redis_enabled": {
+      "description": "Ansible role variable (default: true)",
+      "type": "Optional[Boolean]"
+    },
+    "redis_save": {
+      "description": "Set to an empty set to disable persistence (saving the DB to disk).",
+      "type": "Optional[Array]"
+    },
+    "redis_includes": {
+      "description": "Add extra include files for local configuration/overrides.",
+      "type": "Optional[Array]"
+    },
+    "redis_disabled_commands": {
+      "description": "Disable certain Redis commands for security reasons.",
+      "type": "Optional[Array]"
+    },
+    "par_tags": {
+      "description": "An array of Ansible tags to execute (optional)",
+      "type": "Optional[Array[String]]"
+    },
+    "par_skip_tags": {
+      "description": "An array of Ansible tags to skip (optional)",
+      "type": "Optional[Array[String]]"
+    },
+    "par_start_at_task": {
+      "description": "The name of the task to start execution at (optional)",
+      "type": "Optional[String]"
+    },
+    "par_limit": {
+      "description": "Limit playbook execution to specific hosts (optional)",
+      "type": "Optional[String]"
+    },
+    "par_verbose": {
+      "description": "Enable verbose output from Ansible (optional)",
+      "type": "Optional[Boolean]"
+    },
+    "par_check_mode": {
+      "description": "Run Ansible in check mode (dry-run) (optional)",
+      "type": "Optional[Boolean]"
+    },
+    "par_timeout": {
+      "description": "Timeout in seconds for playbook execution (optional)",
+      "type": "Optional[Integer]"
+    },
+    "par_user": {
+      "description": "Remote user to use for Ansible connections (optional)",
+      "type": "Optional[String]"
+    },
+    "par_env_vars": {
+      "description": "Additional environment variables for ansible-playbook execution (optional)",
+      "type": "Optional[Hash]"
+    }
+  },
+  "implementations": [
+    {
+      "name": "paw_ansible_role_redis.sh",
+      "requirements": [
+        "shell"
+      ],
+      "input_method": "environment"
+    },
+    {
+      "name": "paw_ansible_role_redis.ps1",
+      "requirements": [
+        "powershell"
+      ],
+      "input_method": "environment"
+    }
+  ]
+}

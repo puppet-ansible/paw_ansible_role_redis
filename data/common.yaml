@@ -1,0 +1,26 @@
+---
+paw_ansible_role_redis::redis_port: 6379
+paw_ansible_role_redis::redis_bind_interface: 127.0.0.1
+paw_ansible_role_redis::redis_unixsocket: ''
+paw_ansible_role_redis::redis_timeout: 300
+paw_ansible_role_redis::redis_loglevel: notice
+paw_ansible_role_redis::redis_logfile: "/var/log/redis/redis-server.log"
+paw_ansible_role_redis::redis_databases: 16
+paw_ansible_role_redis::redis_rdbcompression: 'yes'
+paw_ansible_role_redis::redis_dbfilename: dump.rdb
+paw_ansible_role_redis::redis_dbdir: "/var/lib/redis"
+paw_ansible_role_redis::redis_maxmemory: 0
+paw_ansible_role_redis::redis_maxmemory_policy: noeviction
+paw_ansible_role_redis::redis_maxmemory_samples: 5
+paw_ansible_role_redis::redis_appendonly: 'no'
+paw_ansible_role_redis::redis_appendfsync: everysec
+paw_ansible_role_redis::redis_requirepass: ''
+paw_ansible_role_redis::redis_extra_config: ''
+paw_ansible_role_redis::redis_enablerepo: epel
+paw_ansible_role_redis::redis_enabled: true
+paw_ansible_role_redis::redis_save:
+- 900 1
+- 300 10
+- 60 10000
+paw_ansible_role_redis::redis_includes: []
+paw_ansible_role_redis::redis_disabled_commands: []
